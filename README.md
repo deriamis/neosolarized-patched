@@ -29,14 +29,14 @@ use {
 If you don't have Packer configured to auto-update after saving, run `:PackerSync` to finish the installation.
 
 ### vim-plug
-Make sure vim-plug is installed and then put the following before the `call plug#end()` line:
+Make sure vim-plug is installed and then put the following before the `call plug#end()` line after [ColorBuddy](https://github.com/tjdevries/colorbuddy.nvim) is loaded:
 ```
 Plug 'deriamis/neosolarized-patched.nvim'`
 ```
 Exit NeoVim and run `nvim --headless +PlugInstall +qa` to complete the installation.
 
 ### Vundle
-First, install [Vundle](https://github.com/VundleVim/Vundle.vim) and then place the following before `call vundle#end()`:
+First, install [Vundle](https://github.com/VundleVim/Vundle.vim) and then place the following before `call vundle#end()` and after [ColorBuddy](https://github.com/tjdevries/colorbuddy.nvim) is loaded:
 ```
 Plugin 'deriamis/neosolarized-patched.nvim'
 ```
