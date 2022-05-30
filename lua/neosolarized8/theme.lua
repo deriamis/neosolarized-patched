@@ -165,7 +165,13 @@ M.apply = function(config)
         Group.new('TabLineSel', colors.base0, colors.base02, styles.reverse)
         Group.new('VertSplit', colors.base01, colors.none, styles.none)
     end
+
     Group.link('StatusLineTerm', groups.StatusLine)
+	Group.link('NormalMode', groups.StatusLine)
+	Group.link('InsertMode', groups.StatusLine)
+	Group.link('ReplaceMode', groups.StatusLine)
+	Group.link('VisualMode', groups.StatusLine)
+	Group.link('CommandMode', groups.StatusLine)
     Group.link('StatusLineTermNC', groups.StatusLineNC)
 
     if config.visibility == 'high' then
