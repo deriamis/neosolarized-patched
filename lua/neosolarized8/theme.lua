@@ -81,51 +81,6 @@ M.apply = function(config)
     Group.new('SignColumn', colors.base0, colors.none, styles.none)
     Group.new('Conceal', colors.blue, colors.none, styles.none)
 
-    -- Generic syntax highlighting
-    Group.new('Comment', colors.base01, colors.none, config.comment_italics and styles.italic or styles.none)
-    Group.new('Constant', colors.cyan, colors.none, styles.none)
-    Group.new('Identifier', colors.blue, colors.none, styles.none)
-    Group.new('Statement', colors.green, colors.none, styles.none)
-    Group.new('PreProc', colors.orange, colors.none, styles.none)
-    Group.new('Type', colors.yellow, colors.none, styles.none)
-    Group.new('Special', colors.red, colors.none, styles.none)
-    Group.new('Underlined', colors.violet, colors.none, styles.none)
-    Group.new('Ignore', colors.none, colors.none, styles.none)
-    Group.new('Error', colors.red, colors.none, styles.none)
-    Group.new('TODO', colors.magenta, colors.none, styles.bold)
-
-    -- VimScript syntax highlighting
-    Group.link('vimVar', groups.Identifier)
-    Group.link('vimFunc', groups.Identifier)
-    Group.link('vimUserFunc', groups.Identifier)
-    Group.link('helpSpecial', groups.Special)
-    Group.link('vimSet', groups.Normal)
-    Group.link('vimSetEqual', groups.Normal)
-    Group.new('vimCommentString', colors.violet)
-    Group.new('vimCommand', colors.yellow)
-    Group.new('vimCmdSep', colors.blue, colors.none, styles.bold)
-    Group.new('helpExample', colors.base1)
-    Group.new('helpOption', colors.cyan)
-    Group.new('helpNote', colors.magenta)
-    Group.new('helpVim', colors.magenta)
-    Group.new('helpHyperTextJump', colors.blue, colors.none, styles.underline)
-    Group.new('helpHyperTextEntry', colors.green)
-    Group.new('vimIsCommand', colors.base00)
-    Group.new('vimSynMtchOpt', colors.yellow)
-    Group.new('vimSynType', colors.cyan)
-    Group.new('vimHiLink', colors.blue)
-    Group.new('vimGroup', colors.blue, colors.none, styles.underline + styles.bold)
-
-    -- pum (popup menu)
-    Group.new('Pmenu', groups.Normal, colors.base02, styles.none) -- popup menu normal item
-    Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse) -- selected item
-    Group.new('PmenuSbar', colors.base02, colors.none, styles.reverse)
-    Group.new('PmenuThumb', colors.base0, colors.none, styles.reverse)
-
-    -- VimDiff
-    Group.link('diffAdded', groups.Statement)
-    Group.link('diffLine', groups.Identifier)
-
     if config.diffmode == 'low' then
         Group.new('DiffAdd', colors.green, colors.none, styles.bold, colors.green)
         Group.new('DiffChange', colors.yellow, colors.none, styles.bold, colors.yellow)
@@ -208,6 +163,51 @@ M.apply = function(config)
         Group.new('Title', colors.orange, colors.none, styles.bold)
         Group.new('MatchParen', colors.orange, colors.base02, styles.bold)
     end
+
+    -- Generic syntax highlighting
+    Group.new('Comment', colors.base01, colors.none, config.comment_italics and styles.italic or styles.none)
+    Group.new('Constant', colors.cyan, colors.none, styles.none)
+    Group.new('Identifier', colors.blue, colors.none, styles.none)
+    Group.new('Statement', colors.green, colors.none, styles.none)
+    Group.new('PreProc', colors.orange, colors.none, styles.none)
+    Group.new('Type', colors.yellow, colors.none, styles.none)
+    Group.new('Special', colors.red, colors.none, styles.none)
+    Group.new('Underlined', colors.violet, colors.none, styles.none)
+    Group.new('Ignore', colors.none, colors.none, styles.none)
+    Group.new('Error', colors.red, colors.none, styles.none)
+    Group.new('TODO', colors.magenta, colors.none, styles.bold)
+
+    -- VimScript syntax highlighting
+    Group.link('vimVar', groups.Identifier)
+    Group.link('vimFunc', groups.Identifier)
+    Group.link('vimUserFunc', groups.Identifier)
+    Group.link('helpSpecial', groups.Special)
+    Group.link('vimSet', groups.Normal)
+    Group.link('vimSetEqual', groups.Normal)
+    Group.new('vimCommentString', colors.violet)
+    Group.new('vimCommand', colors.yellow)
+    Group.new('vimCmdSep', colors.blue, colors.none, styles.bold)
+    Group.new('helpExample', colors.base1)
+    Group.new('helpOption', colors.cyan)
+    Group.new('helpNote', colors.magenta)
+    Group.new('helpVim', colors.magenta)
+    Group.new('helpHyperTextJump', colors.blue, colors.none, styles.underline)
+    Group.new('helpHyperTextEntry', colors.green)
+    Group.new('vimIsCommand', colors.base00)
+    Group.new('vimSynMtchOpt', colors.yellow)
+    Group.new('vimSynType', colors.cyan)
+    Group.new('vimHiLink', colors.blue)
+    Group.new('vimGroup', colors.blue, colors.none, styles.underline + styles.bold)
+
+    -- pum (popup menu)
+    Group.new('Pmenu', groups.Normal, colors.base02, styles.none) -- popup menu normal item
+    Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse) -- selected item
+    Group.new('PmenuSbar', colors.base02, colors.none, styles.reverse)
+    Group.new('PmenuThumb', colors.base0, colors.none, styles.reverse)
+
+    -- VimDiff
+    Group.link('diffAdded', groups.Statement)
+    Group.link('diffLine', groups.Identifier)
 
     -- airblade/vim-gitgutter
     Group.new('GitGutterAdd', colors.green)
