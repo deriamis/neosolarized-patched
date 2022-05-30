@@ -48,14 +48,12 @@ M.apply = function(config)
     if config.transparent then
         Group.new('Normal', foreground, nil, styles.none)
         Group.new('NormalNC', foreground, nil, styles.none)
-        Group.new('Visual', colors.base01, colors.base03, styles.reverse)
-        Group.new('VisualNOS', colors.none, colors.base02, styles.reverse)
     else
         Group.new('Normal', foreground, colors.base03, styles.none)
         Group.new('NormalNC', foreground, colors.base03, styles.none)
-        Group.new('Visual', colors.base01, colors.base03, styles.reverse)
-        Group.new('VisualNOS', colors.none, colors.base02, styles.reverse)
     end
+    Group.new('Visual', colors.base01, colors.base03, styles.reverse)
+    Group.new('VisualNOS', colors.none, colors.base02, styles.reverse)
 
     -- UI highlighting
     Group.new('Directory', colors.blue, colors.none, styles.none)
