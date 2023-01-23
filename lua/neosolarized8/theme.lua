@@ -251,8 +251,13 @@ M.apply = function(config)
     Group.new('NeomakeNeomakeInfoSign', colors.green)
 
     -- hrsh7th/nvim-cmp
+    Group.link('CmpItemAbbr', groups.Comment)
+    Group.link('CmpItemAbbrDeprecated', groups.Error)
+    Group.new('CmpItemAbbrMatchFuzzy', groups.CmpItemAbbr.fg:dark(), nil, styles.italic)
     Group.new('CmpItemKindDefault', colors.green, colors.none, styles.none)
     Group.link('CmpItemMenuDefault', groups.Pmenu)
+    Group.link('CmpItemKind', groups.Special)
+    Group.link('CmpItemMenu', groups.NonText)
 
     -- glepnir/lspsaga
     Group.new('LspSagaCodeActionTitle', colors.green)
